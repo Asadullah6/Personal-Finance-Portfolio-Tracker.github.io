@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>💎 PortfolioTracker</h1>
+            <p>Advanced Investment Portfolio Management Dashboard</p>
+        </div>
+
+        <div class="stats-overview">
+            <div class="stat-card primary">
+                <div class="stat-header">
+                    <span class="stat-icon">💰</span>
+                    <div class="stat-change positive">
+                        <span>↗</span>
+                        <span>+12.5%</span>
+                    </div>
+                </div>
+                <div class="stat-value" id="totalValue">$0</div>
+                <div class="stat-label">Total Portfolio Value</div>
+            </div>
+
+            <div class="stat-card secondary">
+                <div class="stat-header">
+                    <span class="stat-icon">📈</span>
+                    <div class="stat-change positive">
+                        <span>↗</span>
+                        <span>+8.2%</span>
+                    </div>
+                </div>
+                <div class="stat-value" id="totalGains">$0</div>
+                <div class="stat-label">Total Gains</div>
+            </div>
+
+            <div class="stat-card tertiary">
+                <div class="stat-header">
+                    <span class="stat-icon">🎯</span>
+                    <div class="stat-change positive">
+                        <span>↗</span>
+                        <span>+15.8%</span>
+                    </div>
+                </div>
+                <div class="stat-value" id="monthlyReturn">0%</div>
+                <div class="stat-label">Monthly Return</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-icon">📊</span>
+                    <div class="stat-change positive">
+                        <span>↗</span>
+                        <span>+3</span>
+                    </div>
+                </div>
+                <div class="stat-value" id="totalInvestments">0</div>
+                <div class="stat-label">Active Investments</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="portfolio-section">
+                <h2 class="section-title">
+                    <span>🚀</span>
+                    Add New Investment
+                </h2>
+
+                <div class="add-investment-form">
+                    <div class="form-row">
+                        <input type="text" id="investmentName" class="input-field" placeholder="Investment Name (e.g., Apple Inc.)">
+                        <label for="investmentType" class="visually-hidden">Investment Type</label>
+                        <select id="investmentType" class="select-field">
+                            <option value="">Select Type</option>
+                            <option value="stocks">📈 Stocks</option>
+                            <option value="crypto">₿ Cryptocurrency</option>
+                            <option value="bonds">📜 Bonds</option>
+                            <option value="etf">🎯 ETF</option>
+                            <option value="real-estate">🏠 Real Estate</option>
+                            <option value="commodities">🥇 Commodities</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input type="number" id="investmentAmount" class="input-field" placeholder="Investment Amount ($)" step="0.01">
+                        <input type="number" id="currentValue" class="input-field" placeholder="Current Value ($)" step="0.01">
+                        <label for="purchaseDate" class="visually-hidden">Purchase Date</label>
+                        <input type="date" id="purchaseDate" class="input-field" placeholder="Purchase Date" title="Purchase Date">
+                    </div>
+                    <button onclick="addInvestment()" class="btn-primary">Add to Portfolio</button>
+                </div>
+
+                <h2 class="section-title">
+                    <span>📋</span>
+                    Your Investments
+                </h2>
+
+                <div class="investments-list" id="investmentsList">
+                    <div class="empty-state">
+                        <div class="empty-icon">💼</div>
+                        <p>No investments yet. Add your first investment above!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="performance-chart">
+                    <h3 class="section-title">
+                        <span>📊</span>
+                        Portfolio Performance
+                    </h3>
+                    <div class="chart-placeholder">
+                        <div class="portfolio-growth-info">
+                            <div class="portfolio-growth-title">Portfolio Growth Chart</div>
+                            <div class="portfolio-growth-subtitle">Real-time performance tracking</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="allocation-breakdown">
+                    <h3 class="section-title">
+                        <span>🥧</span>
+                        Asset Allocation
+                    </h3>
+                    <div id="allocationChart">
+                        <div class="allocation-placeholder">
+                            Add investments to see allocation breakdown
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-feed">
+                    <h3 class="section-title">
+                        <span>📰</span>
+                        Market News
+                    </h3>
+                    <div class="news-item">
+                        <div class="news-title">Tech Stocks Rally Continues</div>
+                        <div class="news-summary">Major technology companies showing strong performance amid AI adoption surge...</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Crypto Market Update</div>
+                        <div class="news-summary">Bitcoin and Ethereum maintain stability as institutional adoption grows...</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Fed Interest Rate Decision</div>
+                        <div class="news-summary">Federal Reserve maintains current rates, supporting continued market growth...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
